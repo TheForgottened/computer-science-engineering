@@ -1,0 +1,101 @@
+html{
+    margin: 10px;
+    font-family: sans-serif;
+}
+
+/* menu de navigatings */
+
+.menu{
+    border: 5px solid #E0795F;
+    padding: 0px;
+    background-color:#BD966D;
+    display: flex;
+}
+
+.menu li{
+    padding: 10px;
+    text-align: center;
+    color: white;
+    list-style-type: none;
+}
+
+.search{
+    order: 4;
+    flex-grow: 1;
+}
+
+.search-input{
+    border: 0;
+    background: transparent;
+    border-bottom: 1px solid white;
+    color: white;
+    font-size: 1em;
+    width: 100%;
+}
+
+.search-input::placeholder{
+    color: white;
+}
+
+/* fim do menu de navigatings */
+
+/* grande galeria de macho */
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    display: flex;
+}
+
+.container div{
+    padding: 2px;
+}
+
+.normal{
+    width: 150px;
+    flex-grow: 100;
+    flex-shrink: 100;
+}
+
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.big{
+    width: 200px;
+    flex-grow: 100;
+    flex-shrink: 100;
+}
+
+/* footer in the banks */
+
+footer{
+    border: 5px solid #ffcc5c;
+    margin-top: 10px;
+    background-color: antiquewhite;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+footer a{
+    padding: 10px;
+    text-align: center;
+    font-size: 1.5em;
+    color: #ffeead;
+    text-decoration:none;
+}
+
+footer a:nth-child(2), footer a:nth-child(4){
+    background-color: #ff6f69;
+}
+
+footer a:nth-child(1), footer a:nth-child(3){
+    background-color: #96ceb4
+}
+
+.contact{
+    margin-left: auto;
+}

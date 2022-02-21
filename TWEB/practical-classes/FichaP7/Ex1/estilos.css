@@ -1,0 +1,30 @@
+html{
+    margin: 10px;
+    font-family: sans-serif;
+}
+
+.menu{
+    border: 5px solid #E0795F;
+    padding: 0px;
+    background-color:#BD966D;
+}
+
+.menu li{
+    padding: 10px;
+    text-align: center;
+    color: white;
+    list-style-type: none;
+    display: inline-block;
+}
+
+.search-input{
+    border: 0;
+    background: transparent;
+    border-bottom: 1px solid white;
+    color: white;
+    font-size: 1em;
+}
+
+.search-input::placeholder{
+    color: white;
+}

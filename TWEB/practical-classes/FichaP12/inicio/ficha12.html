@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link type="text/css" rel="stylesheet" href="ficha12.css">
+    <title>Introdução Javascript</title>
+</head>
+<body>
+    <div class="container">
+        <div class="titulo">Avaliação de Tecnologias Web</div>
+        <form>
+            <div class="row">
+                <div class="col-35">
+                    <label for="nome">Primeiro Nome:</label>
+                </div>
+                <div class="col-65">
+                    <input type="text" id="pNome" placeholder="1º Nome" required>
+                </div>
+                <div  id="uNomeLab">
+                    <span></span>Último Nome:</span>
+                    <input type="text" id="uNome" placeholder="Último" required>
+              </div>
+            </div>
+            <div class="row">
+                <div class="col-35">
+                    <label for="tpNao">Trabalho Prático Entregue?</label>
+                </div>
+                <div class="col-65 radio">
+                    <div>
+                        <input type="radio" id="tpNao" name="tp" checked>  <label for="tpNao">Não</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="tpSim" name="tp"> <label for="tpSim">Sim</label>
+                        <span id="notaTP-painel">Nota (%): <input type="number" id="notaTP" placeholder="%" value="0" min="0" max="100"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-35">
+                    <label for="country">Nota Exame</label>
+                </div>
+                <div class="col-65">
+                    <input type="number" id="notaExame" value="0" min="0" max="20" step="0.01" required>
+                </div>
+            </div>
+            <div class="row buttons">
+                <input type="submit" id="btnCalcularNota" value="Calcular Nota Final">
+                <input type="reset"  id="btnReset" value="Limpar">
+            </div>
+
+            <div id="painel-status" class="row">
+                <span id="situacao"></span><br />
+                Nota Final = <span id="notaFinal"></span><br />
+                <span id="msg"></span>
+            </div>
+        </form>
+    </div>
+    <script type="text/javascript" src="ficha12.js"></script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+body{
+    font-family: "Calibri", "sans-serif";
+    margin: 0;
+    padding: 0;
+}
+
+nav{
+    background-color: #333;
+
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+#menu{
+    margin: 0;
+    padding: 0;
+}
+
+#menu a{
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight:bold;
+
+    float: left;
+}
+
+#menu a:hover{
+    color: black;
+    text-decoration: underline;
+    background-color: #ddd;
+}
+
+#menu a.whereuat{
+    background-color: #c00;
+    color: white;
+    text-decoration: none;
+    cursor: default;
+}
+
+#main{
+    clear: both;
+    margin-top: 60px;
+    margin-bottom: 50px;
+}
+
+#main p{
+    margin-left: 10px;
+}
+
+.puxa{
+    float: right;
+}
+
+.column{
+    float: left;
+    width: 33.33%;
+    padding: 5px;
+
+    box-sizing: border-box;
+}
+
+div.container:after{
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.container img{
+    width: 100%;
+    height: 100%;
+}
+
+footer{
+    width: 100%;
+    background-color: #333;
+    position: fixed;
+    bottom: 0;
+}
+
+footer a{
+    color: #f2f2f2;
+    padding: 14px 20px;
+    text-decoration: none;
+    font-size: 17px;
+
+    float: left;
+}
+
+footer a:hover{
+    color: black;
+    background-color: #ddd;
+}
+
+footer .contact-btn{
+    float: right;
+
+    margin-right: 30px;
+    background-color: palevioletred;
+}
+
+footer .contact-btn a:hover{
+    background-color: red;
+    color: white;
+}

@@ -1,0 +1,71 @@
+/* colors */
+/* fonts */
+/* sizes */
+/* mixin */
+/* function baby */
+/* sass boiii */
+#main::after {
+  content: "";
+  clear: both;
+  display: table; }
+
+body {
+  font-family: Verdana, Arial, sans-serif;
+  color: #222222; }
+  @media only screen and (max-width: 960px) {
+    body {
+      font-size: 125%; } }
+
+h1, h2, h3, h4 {
+  font-family: Georgia, serif; }
+
+p {
+  font-family: Verdana, Arial, sans-serif; }
+
+a {
+  color: #f27731; }
+
+#header {
+  background-color: #170a48;
+  height: 60px;
+  padding: 10px;
+  border-radius: 5px; }
+  #header #main-menu a {
+    color: white;
+    text-decoration: none;
+    padding: 6px 8px; }
+  #header #main-menu a:hover {
+    text-decoration: underline white solid; }
+  #header #main-menu li {
+    display: inline; }
+
+#main {
+  width: 960px;
+  margin: auto; }
+  @media only screen and (max-width: 960px) {
+    #main {
+      width: auto; } }
+  #main a:hover {
+    color: #ca510d; }
+  #main #content {
+    width: 69.75%;
+    float: left; }
+  #main #sidebar {
+    float: right;
+    width: 23.25%; }
+    #main #sidebar li {
+      list-style-type: none;
+      padding: 16px 20px;
+      border-bottom: dashed 1px #ddd; }
+
+#footer {
+  height: 60px;
+  background-color: #ccf962;
+  border-radius: 5px; }
+
+.code-button {
+  background-color: orange;
+  color: white;
+  padding: 8px; }
+
+/*# sourceMappingURL=main.css.map */

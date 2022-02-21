@@ -1,0 +1,28 @@
+div{
+    width: 70%;
+    margin: auto;
+    background-color: antiquewhite;
+}
+
+/* imagens */
+
+img{
+    height: 100px;
+    width: 100px;
+}
+
+div#display img{
+    display: none;
+}
+
+div#visibility img{
+    visibility: hidden;
+}
+
+div#opacity img{
+    opacity: 0.5;
+}
+
+div#opacity img:hover{
+    opacity: 1;
+}

@@ -1,0 +1,76 @@
+body{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #434027;
+}
+
+#TW{
+    border-style: solid;
+    border-width: 5px;
+    border-color: #C7C2A1;
+
+    text-align: justify;
+
+    padding: 0px 10px;
+
+    background-color: #FCFCF5;
+}
+
+/* just p things */
+
+p em{
+    text-decoration: underline;
+}
+
+p::first-letter{
+    font-size: 30px;
+}
+
+/* no p from here*/
+
+.box-conteudo{
+    margin: 30px 10px 20px 0px;
+    padding: 10px;
+    border: 1px inset #C7C2A1;
+    background-color: #F3F1DC
+}
+
+.box-conteudo h1{
+    font-size: 20px;
+    margin: 0;
+}
+
+#teorica :first-child{
+    font-style: italic;
+    font-weight: bold;
+}
+
+/* just a things */
+
+a{
+    color: black;
+}
+
+a:visited{
+    color:black;
+}
+
+a:hover{
+    background-color: #FF7C35;
+    text-decoration: none;
+    color: white;
+}
+
+a[href^="mailto:"]:before{
+    content: "<";
+}
+
+a[href^="mailto:"]:after{
+    content: ">";
+}
+
+
+/* no a from here */
+
+[class ^= "destaque"]{
+    color: red;
+}

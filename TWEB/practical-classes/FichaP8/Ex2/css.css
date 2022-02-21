@@ -1,0 +1,95 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#global{
+    color: white;
+    background: #505160BB;
+    padding: 0.8em;
+}
+
+#curso{
+    background-color: #68829E;
+    padding: 1em;
+    border-radius: 1em;
+}
+
+#curso h2{
+    font-weight: 100;
+    padding: 0px;
+    margin: 0px;
+}
+
+#curso label{
+    font-size: 1.2em;
+    font-weight: 200;
+    padding-top: 0.8em;
+    display: block;
+}
+
+#curso input{
+    font-size: 1.1em;
+    font-weight: 200;
+    padding: 0.8em;
+    border: solid 0.05em white;
+    border-radius: 0.4em;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#curso input[type="submit"]{
+    background-color: #AEBD38BB;
+    color: white;
+    margin-top: 1.5em;
+    padding: 0.8em;
+    font-size: 1.5em;
+}
+
+#rodape{
+    background-color: #505160BB;
+    color: white;
+    margin-top: 1.5em;
+    padding: 0.8em;
+    font-size: 1.4em;
+    text-align: center;
+}
+
+@media screen and (min-width: 600px){
+    #global{
+        overflow: auto;
+    }
+
+    div.conteudo{
+        width: 50%;
+        margin: auto;
+    }
+
+    #global div#principios{
+        width: 50%;
+        box-sizing: border-box;
+        float: left;
+        padding-right: 10px;
+        font-size: 18px;
+        font-weight: 200;
+    }
+
+    form#curso{
+        float: right;
+        width: 50%;
+        box-sizing: border-box;
+        padding: 20px;
+        background-color: #AEBD38BB;
+    }
+
+    #curso input[type="submit"]{
+        background-color: #68829E;
+    }
+
+    #global::after{
+        content: "";
+        clear: both;
+        display: table;
+    }
+}

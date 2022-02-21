@@ -1,0 +1,10 @@
+img{
+    width: 665px;
+    height: 388px;
+    border: solid 1px antiquewhite;
+}
+
+.flex{
+    max-width: 100%;
+    height: auto;
+}

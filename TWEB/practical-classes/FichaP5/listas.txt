@@ -1,0 +1,25 @@
+      <div id="horizontal">
+            <p>Barra de Navegação Horizontal:</p>
+            <ul >
+                <li>Um</li>
+                <li>Dois</li>
+                <li>Três</li>
+                <li>Quatro</li>
+                <li>Cinco</li>
+            </ul>
+      </div>
+      <br/>
+      <div id="vertical">
+            <p>Navegação Vertical:</p>
+            <a href="#">Um</a>
+            <a href="#">Dois</a>
+            <a href="#">Três</a>
+            <a href="#">Quatro</a>
+            <a href="#">Cinco</a>
+      </div>
+
+      <ul>
+	<li>Ext 1</li>
+	<li>Ext 2</li>
+      </ul>
+      <a href="#"> Link Exterior</a>

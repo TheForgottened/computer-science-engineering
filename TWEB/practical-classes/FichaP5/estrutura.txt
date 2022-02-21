@@ -1,0 +1,7 @@
+<div id="caixa">
+	<img id="casa" src="imgs/casa.png">
+	<img id="telhado" src="imgs/telhado.png">
+	<img id="chamine" src="imgs/chamine.png">
+	<img id="porta" src="imgs/porta.png">
+	<img id="janela" src="imgs/janela.png">
+</div>

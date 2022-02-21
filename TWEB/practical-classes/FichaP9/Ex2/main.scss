@@ -1,0 +1,125 @@
+/* colors */
+
+$text-color: #222222;
+$theme-color: #170a48;
+$secondary-color: #f27731;
+$ternary-color: #ccf962;
+$menu-item-color: white;
+$link-color: $secondary-color;
+
+/* fonts */
+
+$text-font: Verdana, Arial, sans-serif;
+$headline-font: Georgia, serif;
+
+/* sizes */
+
+$content-width:960px;
+$header-height:60px;
+$footer-height:60px;
+
+/* mixin */
+
+@mixin codereuse ($color){
+  background-color: $color;
+  color: white;
+}
+
+/* function baby */
+
+@function col-width($columns: 12, $page-width: 100%, $gap: 1%){
+  @return ($page-width - ($gap * ($columns - 1))) / $columns;
+}
+
+/* sass boiii */
+
+#main::after{
+  content: "";
+  clear: both;
+  display: table;
+}
+
+body {
+  font-family: $text-font;
+  color: $text-color;
+
+  @media only screen and (max-width: 960px){
+    font-size: 125%;
+  }
+}
+
+h1, h2, h3, h4 {
+  font-family: $headline-font;
+}
+
+p {
+  font-family: $text-font;
+}
+
+a {
+  color: $link-color;
+}
+
+#header {
+  background-color: $theme-color;
+  height: $header-height;
+  padding: 10px;
+  border-radius: 5px;
+
+  #main-menu {
+    
+    a {
+      color: $menu-item-color;
+      text-decoration: none;
+      padding: 6px 8px;
+    }
+
+    a:hover {
+      text-decoration: underline white solid;
+    }
+
+    li {
+      display: inline;
+    }
+  }
+}
+
+#main {
+  width: $content-width;
+  margin: auto;
+
+  @media only screen and (max-width: 960px){
+    width: auto;
+  }
+
+  a:hover{
+    color: darken($link-color, 15%)
+  }
+
+  #content {
+    width: (6 * col-width(8));
+    float: left;
+  }
+
+  #sidebar {
+    float: right;
+    width: (2 * col-width(8));
+
+    li{
+      list-style-type: none;
+      padding: 16px 20px;
+      border-bottom: dashed 1px #ddd;
+    }
+  }
+}
+
+#footer {
+  height: $footer-height;
+  background-color: $ternary-color;
+  border-radius: 5px;
+}
+
+.code-button{
+  @include codereuse(orange);
+  padding: 8px;
+}

@@ -1,0 +1,33 @@
+div{
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+    background-color: #222930;
+    padding: 0.25em;
+}
+
+div#horizontal li{
+    background-color: #4EB1BA;
+    border: 1px solid #DDDDDD;
+    border-radius: 5px;
+    margin: 0.5em;
+    padding: 0.25em;
+    display: inline-block;
+    width: 5em;
+}
+
+div#vertical a{
+    width: 10em;
+    color: white;
+    text-decoration: none;
+    background-color: #4EB1BA;
+    border: 1px solid #DDDDDD;
+    border-radius: 5px;
+    padding: 0.25em;
+    display: block;
+    margin: 0.5em auto;
+}
+
+div#vertical :hover{
+    border-color: #AAAAAA #FFFFFF #FFFFFF #AAAAAA;;
+}

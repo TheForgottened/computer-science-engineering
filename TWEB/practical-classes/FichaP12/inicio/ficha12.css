@@ -1,0 +1,164 @@
+/**********************************************
+*** CSS - Ficha Javascrip 11
+**********************************************/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-image: linear-gradient(#555, rgba(0, 0, 0, 0.10));
+    font-family: Lato;
+    font-weight: 300;
+    position: relative;
+    height: 100vh;
+    color: #555;
+    font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
+}
+
+.container {
+    width: 600px;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -25%);
+    background-color: #fff;
+    box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    padding: 30px;
+    border-radius: 5px;
+    background-color: #fafafa;
+    padding: 30px;
+}
+.titulo{
+    font-size: 20px;
+    font-weight:bold;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+   
+    padding-bottom: 20px;
+}
+
+input[type=text], input[type=number] {
+    width: 110px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    resize: vertical;
+}
+input[type=number] {
+    width: 70px;
+}
+input:focus, button:focus {
+    outline: none;
+}
+input:focus:required:invalid {
+    border: 1px solid red;
+}
+
+label,#notaTP-painel, #uNomeLab {
+    padding: 8px 8px 8px 0;
+    letter-spacing: 1px;
+    display: inline-block;
+    font-weight:bold;
+    font-size:small;
+}
+#uNomeLab {
+    float:right;
+}
+input[type=submit], input[type=reset] {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: darkgray;
+    font-size: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 100;
+    margin: 20px 5px;
+    float:right;
+}
+
+input[type=submit]:hover, input[type=reset]:hover, #btnCalcularNota:hover {
+        background-color: #808080;
+}
+
+.col-35 {
+    float: left;
+    text-align: right;
+    width: 35%;
+    margin-top: 6px;
+    padding-right: 10px;
+}
+.col-65 {
+    float: left;
+    margin-top: 6px;
+}
+
+/* Clear floats */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+#painel-status {
+    border-radius: 15px;
+    color: #fff;
+    margin: 0;
+    text-align: center;
+    padding: 10px 0;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.40);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    background-color: #fafafa;
+    line-height: 40px;
+}
+#msg {
+    font-style:italic;
+    font-size:smaller;
+}
+#situacao {
+    font-size: larger;
+    font-weight: bold;
+}
+.aprovado {
+   
+    color: #12ae26 !important;
+    border: 5px solid #12ae26 !important;
+}
+.reprovado {
+    color: #EB4D4D !important;
+    border: 5px solid #EB4D4D !important;
+}
+
+@media screen and (max-width: 600px) {
+    .container {
+        width: 100%;
+    }
+    input[type=submit], input[type=reset] {
+        margin: 0px;
+        margin-top: 10px;
+        width: 100%;
+        padding: 12px 20px;
+        border-radius:10px;
+    }
+
+    #uNomeLab {  float:left; }
+    #uNomeLab input { display:block; }
+    .col-35, .col-65 {
+        width: 100%;
+        text-align: left;
+        margin: 0px 0px;
+    }
+    .radio {
+        margin-left:20px;
+    }
+    #painel-status {
+        margin: 10px 0;
+    }
+}
+

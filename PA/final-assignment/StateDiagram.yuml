@@ -1,0 +1,28 @@
+// {type:state}
+// {generate:true}
+
+(start)->(ChooseOption)
+
+(ChooseOption)[startWaitPlayersNameAndType]->(WaitPlayersNameAndType)
+(ChooseOption)[startGame]->(Game)
+(ChooseOption)[startWatchReplay]->(WatchReplay)
+(ChooseOption)[SAIR]->(end)
+
+(WatchReplay)[replayMove]->(WatchReplay)
+(WatchReplay)[replayMove : já não há mais jogadas]->(EndGame)
+
+(WaitPlayersNameAndType)[setPlayers : jogadores são inválidos]->(WaitPlayersNameAndType)
+(WaitPlayersNameAndType)[setPlayers : jogadores são válidos]->(Game)
+(WaitPlayersNameAndType)[goBack]->(ChooseOption)
+
+(Game)[placePieceOnColumn]->(Game)
+(Game)[placePieceOnColumnAI]->(Game)
+(Game)[startMinigameForSpecialPiece]->(MinigameForSpecialPiece)
+(Game)[placePieceOnColumn : jogador ganhou/empatou]->(EndGame)
+(Game)[placePieceOnColumnAI : jogador ganhou/empatou]->(EndGame)
+(Game)[goBack]->(ChooseOption)
+
+(MinigameForSpecialPiece)[setMinigameAnswer : minijogo requer mais que uma resposta]->(MinigameForSpecialPiece)
+(MinigameForSpecialPiece)[setMinigameAnswer : minijogo acabou]->(Game)
+
+(EndGame)[goBack]->(ChooseOption)

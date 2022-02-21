@@ -1,0 +1,58 @@
+  <nav>
+    <div id="menu">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Portfolio</a>
+        <a href="#">Archives</a>
+        <a href="#">Resources</a>
+        
+    </div>
+    </nav>
+    
+    <div id="main">
+    <p>Beatifull landscape picures:</p>
+    <div class="container">
+            <div class="column">
+                <img src="img/normal1.jpg"/>
+            </div>
+            <div class="column">
+                <img src="img/normal2.jpg"/>
+            </div>
+            <div class="column">
+                <img src="img/big1.jpg"/>
+            </div>
+    </div>
+    <div class="container">
+            <div class="column">
+                <img src="img/normal3.jpg"/>
+            </div>
+            <div class="column">
+                <img src="img/normal4.jpg"/>
+            </div>
+            <div class="column">
+                <img src="img/big2.jpg"/>
+            </div>
+    </div>
+    <div class="container">
+            <div class="column">
+                <img src="img/normal5.jpg"/>
+            </div>
+            <div class="column">
+                <img src="img/normal6.jpg"/>
+            </div>
+            <div class="column">
+                <img src="img/big3.jpg"/>
+            </div>
+    </div>
+    </div>
+    
+
+    <footer>
+        <a href="#">Topic 1</a>
+        <a href="#">Topic 2</a>
+        <a href="#">Topic 3</a>
+      
+      <div class="contact-btn">
+        <a href="#">Contact</a>
+      </div>
+    </footer>

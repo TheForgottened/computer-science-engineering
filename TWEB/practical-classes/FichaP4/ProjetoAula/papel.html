@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Exercício Papel</title>
+
+<style>
+    body{background-color: lightgray;}
+    h1, h2, h3 {color: gray;}
+    .vermelho {color: orange;}
+
+    li.vermelho{color: white;}
+
+    #bloco{
+        background-color: white;
+        border: 4px solid gray;
+    }
+
+    #bloco .vermelho{text-decoration: underline;}
+
+    #bloco .bloco2{
+        background-color: blue;
+        border: 10px solid red;
+    }
+
+    #bloco2{text-decoration: underline;}
+
+    li:nth-child(2){color:gray;}
+</style>
+
+</head>
+<body>
+
+<h1>Cor de <span class="vermelho">Fundo</span></h1>
+<p class="vermelho">As cores podem ser especificados por:</p>
+<ul>
+    <li class="vermelho">nome da cor</li>
+    <li>valor decimal RGB</li>
+    <li>valor hexadecimal RGB</li>
+</ul>
+
+<div id="bloco">
+    Este bloco de texto fica com cor... <span class="vermelho">Este texto fica com cor...</span>
+    <div id="bloco2">
+        E por fim, este bloco tem cor ***
+    </div>
+</div>
+
+</body>
+</html>

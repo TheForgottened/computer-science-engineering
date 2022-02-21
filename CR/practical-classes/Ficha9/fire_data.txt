@@ -1,0 +1,9 @@
+Type;sprinkler?;Fire?
+kitchen;yes;yes
+office;yes;yes
+living room;yes;yes
+bedroom 1;yes;yes
+bedroom 2;yes;yes
+bedroom 3;yes;yes
+greenhouse;yes;yes
+garage;yes;yes

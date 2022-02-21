@@ -1,0 +1,194 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "winres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (United Kingdom) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENG)
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_UK
+#pragma code_page(1252)
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""winres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+ID_MAIN_MENU MENUEX
+BEGIN
+    POPUP "Listar...",                      65535,MFT_STRING,MFS_ENABLED
+    BEGIN
+        MENUITEM "Aviões",                      IDM_LISTAR_AIRPLANES,MFT_STRING,MFS_ENABLED
+        MENUITEM "Aeroportos",                  IDM_LISTAR_AIRPORTS,MFT_STRING,MFS_ENABLED
+    END
+    MENUITEM MFT_SEPARATOR
+    MENUITEM "Adicionar Aeroportos",        IDM_ADD_AIRPORTS,MFT_STRING,MFS_ENABLED
+    MENUITEM "Aceitar/Suspender Aviões",    IDM_SUS_AIRPLANES,MFT_STRING,MFS_ENABLED
+    MENUITEM "Encerrar",                    IDM_SHUTDOWN,MFT_STRING,MFS_ENABLED
+    MENUITEM "Ajuda",                       IDM_HELP,MFT_STRING | MFT_RIGHTJUSTIFY,MFS_ENABLED
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ADD_AIRPORTS DIALOGEX 0, 0, 309, 176
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Adicionar Aeroporto"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK_ADD_AIRPLANE,198,155,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL_ADD_AIRPLANE,251,155,50,14
+    EDITTEXT        IDC_EDIT_AIRPORT_NAME,71,31,158,12,ES_AUTOHSCROLL
+    CTEXT           "Nome do aeroporto (sem espaços)",IDC_STATIC,95,14,111,8,SS_CENTERIMAGE
+    CTEXT           "Coordenadas X",IDC_STATIC,53,82,50,8
+    CTEXT           "Coordenadas Y",IDC_STATIC,204,82,50,8
+    EDITTEXT        IDC_EDIT_AIRPORT_X,52,97,53,14,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_EDIT_AIRPORT_Y,203,97,53,14,ES_AUTOHSCROLL | ES_NUMBER
+END
+
+IDD_SUS_AIRPLANES DIALOGEX 0, 0, 237, 82
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Aceitar/Suspender Aviões"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "Mudar Estado",IDC_BUTTON_CHANGE_STATE,85,54,71,21
+    CTEXT           "Static",IDC_TEXT,7,7,223,37,SS_CENTERIMAGE
+END
+
+IDD_HELP DIALOGEX 0, 0, 309, 379
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Ajuda"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "Fechar",IDOK_FECHAR,125,358,50,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_ADD_AIRPORTS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 301
+        VERTGUIDE, 78
+        VERTGUIDE, 150
+        VERTGUIDE, 229
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 169
+        HORZGUIDE, 90
+    END
+
+    IDD_SUS_AIRPLANES, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 230
+        VERTGUIDE, 30
+        VERTGUIDE, 120
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 75
+        HORZGUIDE, 43
+    END
+
+    IDD_HELP, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 302
+        VERTGUIDE, 47
+        VERTGUIDE, 150
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 372
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// AFX_DIALOG_LAYOUT
+//
+
+IDD_ADD_AIRPORTS AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_SUS_AIRPLANES AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_HELP AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_APP_ICON            ICON                    "icon1.ico"
+
+#endif    // English (United Kingdom) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

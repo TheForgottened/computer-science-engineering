@@ -1,0 +1,43 @@
+<div id="global">   
+            <div>
+	      <h1>Imagem sem Controlo de Visualização</h1> 
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+              do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+	      <img src="AAC.jpg" alt="AAC" />
+      	      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+              do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+	   </div>
+
+          <br/>
+          <div id="display">
+	      <h1>display:none</h1> 
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+              do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+	      <img src="AAC.jpg" alt="AAC" />
+      	      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+              do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+	  </div>
+
+          <br/>
+          <div id="visibility">
+	      <h1>visibility:hidden</h1> 
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+              do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+	      <img src="AAC.jpg" alt="AAC" />
+      	      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+              do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+	  </div>
+
+          <br/>
+          <div id="opacity">
+	      <h1>opacity:0.5</h1> 
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+              do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+	      <img src="AAC.jpg" alt="AAC" />
+      	      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+              do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+	 </div>
+    
+    
+    </div>
+

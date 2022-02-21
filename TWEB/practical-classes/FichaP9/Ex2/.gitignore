@@ -1,0 +1,27 @@
+# Created by https://www.toptal.com/developers/gitignore/api/visualstudiocode,sass
+# Edit at https://www.toptal.com/developers/gitignore?templates=visualstudiocode,sass
+
+### Sass ###
+.sass-cache/
+*.css.map
+*.sass.map
+*.scss.map
+
+### VisualStudioCode ###
+.vscode/
+.vs/
+
+# Local History for Visual Studio Code
+.history/
+
+# Built Visual Studio Code Extensions
+*.vsix
+
+### VisualStudioCode Patch ###
+# Ignore all local history of files
+.history
+.ionide
+
+# Support for Project snippet scope
+
+# End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,sass

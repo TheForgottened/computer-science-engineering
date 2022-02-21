@@ -1,0 +1,45 @@
+Nome do ficheiro de espaco usado: e1.bin
+Nome do ficheiro de populacao inicial: pessoasb.txt
+Nome do ficheiro de populacao final: teste.txt
+Numero de dias passados na simulacao: 9
+
+Local ID = 1:
+
+Numero / taxa de saudaveis: 4 / 80.00%
+Numero / taxa de doentes: 1 / 20.00%	Media de dias doente: 9.00
+Numero / taxa de imunes: 0 / 0.00%
+Numero de pessoas: 5
+
+
+Local ID = 2:
+
+Numero / taxa de saudaveis: 4 / 100.00%
+Numero / taxa de doentes: 0 / 0.00%
+Numero / taxa de imunes: 0 / 0.00%
+Numero de pessoas: 4
+
+
+Local ID = 3:
+
+Numero / taxa de saudaveis: 4 / 80.00%
+Numero / taxa de doentes: 0 / 0.00%
+Numero / taxa de imunes: 1 / 20.00%
+Numero de pessoas: 5
+
+
+Local ID = 4:
+
+Numero / taxa de saudaveis: 4 / 66.67%
+Numero / taxa de doentes: 1 / 16.67%	Media de dias doente: 9.00
+Numero / taxa de imunes: 1 / 16.67%
+Numero de pessoas: 6
+
+
+Espaco:
+
+Numero / taxa de saudaveis: 16 / 80.00%
+Numero / taxa de doentes: 2 / 10.00%	Media de dias doente: 9.00
+Numero / taxa de imunes: 2 / 10.00%
+Numero de pessoas: 20
+
+

@@ -1,0 +1,398 @@
+\documentclass[11pt]{article}
+\usepackage{graphicx}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{tikz}
+\usepackage{indentfirst}
+\usepackage{tabularx}
+\usepackage{listingsutf8}
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage[portuguese]{babel}
+
+\graphicspath{{./images/}}
+
+\def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;} 
+\setlength{\parskip}{0.5em}
+
+\renewcommand{\lstlistingname}{Código}
+\renewcommand{\lstlistlistingname}{Pedaços de Código}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\hypersetup{
+	colorlinks=false,
+	linktoc=all,
+	hidelinks,
+}
+
+\lstset{
+	belowcaptionskip=1\baselineskip,
+	captionpos=b,
+	frame=tb,
+	language=C,
+	aboveskip=3mm,
+	belowskip=3mm,
+	showstringspaces=false,
+	columns=flexible,
+	basicstyle={\small\ttfamily},
+	numbers=none,
+	numberstyle=\tiny\color{gray},
+	keywordstyle=\color{blue},
+	commentstyle=\color{dkgreen},
+	stringstyle=\color{mauve},
+	breaklines=true,
+	breakatwhitespace=true,
+	tabsize=3,
+	inputencoding=utf8,
+	extendedchars=true,
+	literate={á}{{\'a}}1 {ã}{{\~a}}1 {à}{{\`a} }1 {Ã}{{\~A}}1 {ó}{{\'o}}1 {Ó}{{\'O}}1 {Í}{{\'I}}1 {í}{{\'i}}1 {é}{{\'e}}1 {ç}{{\c{c}}}1 {Ç}{{\c{C}}}1 {ú}{{\'u}}1 {õ}{{\~o}}1
+}
+
+\begin{document}
+	\begin{titlepage}
+    	\begin{center}
+    		\includegraphics[width=0.6\textwidth]{logo-isec}
+    		
+    		\vspace*{\fill}
+    		
+    		\Huge
+    		\textbf{Sistemas Operativos II}
+    		
+    		\huge
+    		Sistema de Gestão do Espaço Aéreo
+    		
+    		\vspace{0.5cm}
+    		\LARGE
+    		2020 - 2021
+    		
+    		\vspace{1.5cm}
+    		
+    		\textbf{TheForgotten\\BrunoTeixeira1996}
+    		
+    		\vfill
+    		\vspace*{\fill}
+    		
+    		\normalsize
+    		Licenciatura de Engenharia Informática \\
+    		16 de maio de 2021		
+    	\end{center}
+    \end{titlepage}
+	
+	\tableofcontents
+	\pagebreak
+	
+	\large
+	\section{Introdução}
+	\normalsize
+	
+	O trabalho prático consiste na implementação de vários programas que, no seu conjunto, simulam um sistema de gestão de aeroportos, espaço aéreo, passageiros e aviões que nele circulam.
+	
+	O trabalho prático foi concretizado em linguagem C usando a API do Windows chamada de Win32. Inicialmente numa primeira meta, todos os programas do trabalho foram desenvolvidos única e exclusivamente para uso de interface consola.
+    
+    
+	\large
+	\section{Arquitetura Geral}
+	\normalsize
+	
+	A aplicação \textbf{Control} é a responsável por gerir todo o funcionamento do espaço aéreo. Sem esta, nem os aviões nem os passageiros conseguem funcionar. Deste modo, esta deve ser sempre aberta antes dos outros.
+	
+	Depois é só inicializar quantos aviões desejar, estes comunicarão com o \textbf{Control} por memória partilhada, sendo a comunicação inicial feita por buffer circular usando o paradigma produtor/consumidor, sendo o avião considerado o produtor e o controlador o consumidor.
+	
+	O avião irá avisar o \textbf{Control} momentaneamente de que este se encontra ligado e a funcionar normalmente, usando uma thread para isso.
+	
+	Depois o processo de verificação de posições ocupadas por parte dos aviões, é feita tambem com memória partilhada, uma vez que o controlador vai atualizando a memória partilhada com as coordenadas ocupadas, o avião gera umas novas coordenadas com a \textbf{DLL} disponibilizada e depois vai verificar nessa memória partilhada se essas coordenadas estão ou não livres, caso não estejam o mesmo volta a gerar outras coordenadas sempre usando a \textbf{DLL} para esse efeito.
+	
+	
+	\large
+	\section{Mecanismos de Sincronização}
+	\normalsize
+	
+	Para garantir que apenas existe uma instância da aplicação \textbf{Control} é usado um semáforo com nome. Para gerir dados partilhados entre threads do mesmo processo são usadas secções críticas. No entanto para gerir dados entre processos diferentes usamos um mutex com nome.
+	
+	O \textbf{Control} garante tambem que apenas são permitidos aviões consoante o número máximo definido no inicio da execução. Este controlo é feito usando um semáforo que é criado no inicio da execução do \textbf{Control}, semáforo este que apenas tem lugar igual ao número máximo de aviões permitidos.
+	
+	O mecanismo de \textbf{ping} do avião em relação ao \textbf{Control} funciona com eventos com nome. É criado um evento com um nome genérico baseado no ID de processo do avião, e depois é aberto no lado do \textbf{Control}. Este fica 3 segundos à espera do evento ser assinalado e, no caso de não ser assinalado, deixa de dar atenção ao avião e assume que deixou de existir.
+	
+	No paradigma de produtor/consumidor, uma vez que existem \textbf{N} produtores e apenas um consumidor, usamos dois semáforos, um de leitura e outro de escrita, usamos tambem algumas secções criticas dentro dos processos e usamos um mutex apenas para o produtor, de modo a garantirmos um correto funcionamento do paradigma.
+	
+	
+	\large
+	\section{Uso da DLL}
+	\normalsize
+	
+	Na nossa implementação, decidimos usar a \textbf{DLL} de forma explícita por acharmos que traz mais vantagens em relação à implícita.
+	
+	O código não é muito mais difícil na explícita e, para além disso, com este tipo de implementação é muito mais fácil fazer mudanças na \textbf{DLL}. Também nos agradou o facto de não ser preciso fazer alterações nas definições de projeto no Visual Studio.
+	
+	\large
+	\section{Estruturas de Dados}
+	\subsection{Struct COORDINATES}
+	\normalsize
+	
+	\begin{lstlisting}[caption=Struct COORDINATES]
+	    struct COORDINATES_STRUCT{
+	        int x, y;
+	    };
+	\end{lstlisting}
+	
+	Estrutura responsável pelas coordenadas.
+	
+	
+    \large
+	\subsection{Struct AIRPLANE}
+	\normalsize
+
+	\begin{lstlisting}[caption=Struct AIRPLANE]
+		struct AIRPLANE_STRUCT {
+			   DWORD id;
+	           unsigned int capacity, velocity;
+	           coordinatesStruct currentCoordinates; // coordenadas atuais
+	           coordinatesStruct destinationCoordinates; // coordenadas do destino
+	           TCHAR destAirport[STR_SIZE], srcAirport[STR_SIZE];
+	           BOOL stopped; // está parado ?
+		};
+	\end{lstlisting}
+
+	Esta é a estrutura associada aos aviões. Cada avião vai estar associado a uma estrutura destas.
+	
+	
+	\large
+	\subsection{Struct MINI\_AIRPLANE}
+	\normalsize
+	
+	\begin{lstlisting}[caption=Struct MINI\_AIRPLANE]
+		struct MINI_AIRPLANE_STRUCT {
+			DWORD id;
+	        coordinatesStruct currentCoordinates; // coordeandas atuais
+	        unsigned int maxAirplanes; // nr maximo de aviões
+	        TCHAR destAirport[STR_SIZE], srcAirport[STR_SIZE];
+	        BOOL stopped;
+		};
+	\end{lstlisting}
+	
+	Esta estrutura representa um avião que é colocado na memória partilhada para ser feita a verificação de posições pelo mesmo. Usamos esta estrutura ao invés da outra porque há informação que não é necessária na memória partilhada e, assim, poupamos recursos.
+	
+	
+	\large
+	\subsection{Struct INTERFACE}
+	\normalsize
+	
+	\begin{lstlisting}[caption=Struct INTERFACE]
+        struct INTERFACE_STRUCT {
+        	pAirport airportsArray; // array de aeroportos
+        	pAirplane airplanesArray; // array de avioes
+        	unsigned int* nrAirports, * nrAirplanes;
+        	unsigned int* maxAirports, * maxAirplanes;
+        	LPCRITICAL_SECTION criticalSectionAirplanes, criticalSectionAirports, criticalSectionBool;
+        	BOOL* stop;
+        };
+	\end{lstlisting}
+	
+	Esta estrutura é usada para interface principal, atualmente esta interface é representada pela interface consola, ou seja, é usada para receber comandos do utilizador.
+	
+	
+	\large
+	\subsection{Struct SHAREDMEM}
+	\normalsize
+	
+	\begin{lstlisting}[caption=Struct SHAREDMEM\_STRUCT]
+        struct SHAREDMEM_STRUCT {
+        	int nProducers;
+        	int writeIndex; // Próxima posição de escrita
+        	int readIndex; // Próxima posição de leitura
+        
+        	airplane buffer[CIRCULAR_BUFFER_SIZE]; // Buffer circular em si (array de estruturas)
+        };
+	\end{lstlisting}
+	
+	Estrutura utilizada para o uso da memória partilhada usando o paradigma produtor/consumidor.
+	
+	
+	\large
+	\subsection{Struct DATATHREAD}
+	\normalsize
+	
+	\begin{lstlisting}[caption=Struct DATATHREAD\_STRUCT]
+        struct DATATHREAD_STRUCT {
+        	pSharedMemoryStruct sharedMemory; // Ponteiro para a memória patilhada
+        	pAirplane airplanesArray; // Array de aviões
+        	HANDLE* hThreadPingArray; // Array de handles para as threads de ping
+        	pPingThreadStruct threadPingStructArray;
+        	unsigned int* nrAirplanes, * maxAirplanes;
+        	HANDLE hSemaphoreWrite; // Semáforo de escrita
+        	HANDLE hSemaphoreRead; // Semáforo de leitura
+        	LPCRITICAL_SECTION criticalSectionAirplanes, criticalSectionBool;
+        	BOOL* stop;
+        };
+	\end{lstlisting}
+	
+	Estrutura utilizada para a thread do consumidor.
+
+
+	\large
+	\subsection{Struct COORDTHREAD}
+	\normalsize
+	
+	\begin{lstlisting}[caption=Struct COORDTHREAD\_STRUCT]
+        struct COORDTHREAD_STRUCT {
+        	pMiniAirplane sharedMemory;
+        	pAirplane airplanesArray; // array de aviões
+        	unsigned int size; // número de aviões
+        	HANDLE hMutex; // handle do mutex
+        	LPCRITICAL_SECTION criticalSectionAirplanes, criticalSectionBool;
+        	BOOL* stop;
+        };
+	\end{lstlisting}
+	
+	Estrutura utilizada para a thread da verificação de coordenadas.
+
+
+	\large
+	\subsection{Struct PINGTHREAD}
+	\normalsize
+	
+	\begin{lstlisting}[caption=Struct PINGTHREAD\_STRUCT]
+        struct PINGTHREAD_STRUCT {
+        	DWORD thisAirplaneId; // id do avião
+        	pAirplane airplanesArray; // ponteiro para array de aviões
+        	unsigned int *nrAirplanes; // nr de aviões
+        	LPCRITICAL_SECTION criticalSectionBool, criticalSectionAirplanes;
+        	BOOL* stop;
+        };
+	\end{lstlisting}
+	
+	Estrutura utilizada para a thread que verifica se um avião ainda está ativo ou não.
+
+
+	\large
+	\subsection{Struct MOVE\_AIRPLANE}
+	\normalsize
+	
+	\begin{lstlisting}[caption=Struct MOVE\_AIRPLANE\_STRUCT]
+        struct MOVE_AIRPLANE_STRUCT {
+        	pAirplane thisAirplane; // ponteiro para o aviao
+        	LPCRITICAL_SECTION criticalSectionAirplane, criticalSectionBool;
+        	BOOL* hasArrivedAtDestination; // o aviao chegou ao destino
+        	BOOL* stop; // o utilizador terminou o programa repentinamente
+        };
+	\end{lstlisting}
+	
+	Estrutura utilizada no programa dos aviões para tratar da movimentação do mesmo.
+	
+	
+	\large
+	\section{Controlador Aéreo}
+	\subsection{Funcionalidades principais}
+	\subsubsection{Controlo da informação de aeroportos e aviões}
+	\normalsize
+	
+    Toda a informação relativamente aos aeroportos e aviões está guardada localmente no \textbf{Control} para que fique mais fácil manipular todas as estruturas de dados.
+    O \textbf{Control} guarda tambem um array de handles usado na thread de avisos dos aviões, assim como um array de estruturas dos \textbf{Pings}.
+	
+	
+	\large
+	\subsubsection{Criação de aeroportos}
+	\normalsize
+	
+	O \textbf{Control} usa uma thread chamada \textbf{threadInterface} responsável por todos os comandos que o utilizador escreve. Um destes comandos é o \textbf{caeroporto} que está responsável por criar um aeroporto como é pedido no enunciado.
+	
+	Aqui tambem é possível serem listados todos os aeroportos (\textbf{laeroportos}) assim como todos os aviões (\textbf{lavioes}).
+	Por fim, para terminar o programa de forma ordeira é usado o comando \textbf{terminar}.
+	
+	
+	\large
+	\subsubsection{Atualização das posições dos aviões}
+	\normalsize
+	
+	O \textbf{Control} tem uma thread responsável por interagir com a memória partilhada (\textbf{coordinatesThread}), memória esta que é usada pelo avião para verificar a ocupação de posições.
+	
+	Inicialmente o \textbf{Control} preenche a memória partilhada com um array de estruturas do tipo \textbf{MINI\_AIRPLANE}, tendo estas estruturas a informação dos aviões e em que coordenadas se encontram.
+	
+	De seguida é feito um ciclo \textbf{while} que copia da memória partilhada para o array de aviões local, e logo a seguir o \textbf{Control} volta a atualizar toda a memória partilhada com a informação mais recente, fazendo assim com que o próximo avião a verificar as coordenadas consiga saber quais são as ocupadas e para qual terá de ir. Neste processo, o avião fica à espera num \textbf{Mutex} partilhado entre processos até que o \textbf{Control} atualize novamente a memória partilhada e liberte o mesmo.
+	
+	
+	\large
+	\section{Aviões}
+	\normalsize
+	
+	O programa \textbf{Airplanes} representa cada instância de um avião distinto. Este programa é lançado pelo utilizador e faz várias viagens. 
+	
+	
+	\large
+	\subsection{Funcionalidades principais}
+	\subsubsection{Lançamento}
+	\normalsize
+	
+	No inicio da execução, é pedido ao utilizador a lotação, a velocidade em posições por segundo e o aeroporto inicial onde se encontra.
+	
+	Depois de serem validados todos os parâmetros introduzidos pelo utilizador, o avião vai ao buffer circular que está em memória partilhada com o \textbf{Control} e escreve lá a sua estrutura, como uma espécie de inscrição.
+	
+	
+	\large
+	\subsubsection{Movimentação no  espaço  aéreo}
+	\normalsize
+	
+	O avião antes de iniciar a movimentação gera umas coordenadas usando a \textbf{DLL} e logo de seguida vê se o \textbf{Mutex} partilhado entre ele e o \textbf{Control} está livre, caso esteja significa que a memória partilhada ja contém as coordenadas ocupadas atualizadas. De seguida o avião acede à memória partilhada e verifica se as coordenadas geradas pela \textbf{DLL} são ou não válidas, caso sejam, o mesmo atualiza a memória partilhada com as suas novas coordenadas atuais e avança uma posição, caso não sejam o avião volta a chamar a \textbf{DLL} até encontrar umas coordenadas válidas. Se chegar ao fim a \textbf{DLL} retorna 0, sendo assim o mesmo atualiza a memória partilhada e muda o seu estado \textbf{hasArrivedAtDestination} para \textbf{TRUE}.
+	
+	Uma vez que a \textbf{DLL} fornece coordenadas seguidas (1,1 ou 2,2, ...) tivemos de implementar uma solução para isto. A solução encontrada foi, no processo de chamada à \textbf{DLL}, as coordenadas do aeroporto de destino foram alteradas de maneira aleatória, somando um valor entre 0 e 1000 às mesmas (valores corrigidos na seguinte iteração), forçando o avião a ir por um caminho alternativo nunca entrando em colisão contra outro avião.
+
+
+	\large
+	\section{Manual de Utilização}
+	\subsection{Control}
+	\normalsize
+	
+	\begin{tabularx}{\textwidth}{|l|X|X|}
+	    \hline
+	    \textbf{Comando} & \textbf{Modo de uso} & \textbf{Descrição} \\
+	    \hline
+	    caeroporto & caeroporto \textless{nome}\textgreater \textless{coordenada x}\textgreater \textless{coordenada y}\textgreater & Cria um aeroporto com nome \textless{nome}\textgreater nas coordenadas indicadas \\
+	    \hline
+	    laeroportos & laeroportos & Lista todos os aeroportos existentes no espaço aéreo \\
+	    % \hline
+	    % snavioes & snavioes & Suspende a aceitação de novos aviões \\
+	    % \hline
+	    % anavioes & anavioes & Ativa a aceitação de novos aviões \\
+	    \hline
+	    lavioes & lavioes & Lista os aviões existentes no espaço aéreo \\
+	    \hline
+	    terminar & terminar & Desliga o programa \\
+	    \hline
+	\end{tabularx}
+	
+	
+	\large
+	\subsection{Airplanes}
+	\normalsize
+	
+	\begin{tabularx}{\textwidth}{|l|X|X|}
+	    \hline
+	    \textbf{Comando} & \textbf{Modo de uso} & \textbf{Descrição} \\
+	    \hline
+	    destino & destino \textless{nome\_aeroporto}\textgreater & Define o destino do avião \\
+	    \hline
+	    inicia & inicia & Inicia a viagem \\
+	    \hline
+	    terminar & terminar & Desliga o programa \\
+	    \hline
+	\end{tabularx}
+
+
+	\large
+	\section{Conclusão}
+	\normalsize
+	
+	Ao longo deste trabalho, deparámo-nos e fomos resolvendo vários desafios que não esperávamos ter, tratando-se de uma excelente oportunidade para consolidação de matéria das aulas teóricas e práticas de Sistemas Operativos 2. Este permitiu-nos colocar em prática conceitos importantes sobre a arquitetura, criação e desenvolvimento de programas para sistemas NT, dando-nos uma visão para os vários detalhes dessas atividades.
+	
+	\pagebreak
+	
+	
+	\large
+	\section{Anexos}
+	\normalsize
+	
+	% \listoffigures
+	\lstlistoflistings
+\end{document}

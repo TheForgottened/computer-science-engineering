@@ -1,0 +1,73 @@
+body{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color:#434027;
+}
+
+#TW{
+    border-style: solid;
+    border-width: 5px;
+    border-color: #C7C2A1;
+    background-color: #FCFCF5;
+
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    text-align: justify;
+}
+
+p em{
+    text-decoration: underline;
+}
+
+.box-conteudo{
+    margin: 30px 10px 20px 0px;
+    padding: 10px;
+    border: 1px inset #C7C2A1;
+    background-color: #F3F1DC
+}
+
+.box-conteudo h1{
+    font-size: 20px;
+    margin: 0;
+}
+
+#teorica :first-child{
+    font-weight: bold;
+    font-style: italic;
+}
+
+p::first-letter{
+    font-size: 30px;
+}
+
+/* cenas com o a */
+
+a:link{
+    color:black
+}
+
+a:visited{
+    color:black
+}
+
+a:hover{
+    background-color: #FF7C35;
+    color: white;
+    text-decoration: none;
+}
+
+a[href^="mailto:"]:before{
+    content: "<";
+}
+
+a[href^="mailto:"]:after{
+    content: ">";
+}
+
+/* fim cenas com a */
+
+[class ^= destaque]{
+    color: red;
+}

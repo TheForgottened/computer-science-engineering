@@ -1,0 +1,125 @@
+/**********************************************
+*** CSS - Ficha Javascrip 1
+**********************************************/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: linear-gradient(#555, rgba(0, 0, 0, 0.10));
+    font-family: Lato;
+    font-weight: 300;
+    position: relative;
+    height: 100vh;
+    color: #555;
+    font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
+
+}
+
+.container {
+    width: 600px;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -25%);
+    background-color: #fff;
+    box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    padding: 30px;
+}
+
+.title, .title-operations {
+    font-size: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 100;
+    position: relative;
+    color: #EB4D4D;
+    margin-bottom:5px;
+}
+.message {
+    text-align: center;
+    font-size: 10px;
+    font-weight: 100;
+    font-style: italic;
+    margin-bottom:20px;
+}
+.animal-box {
+    background-color: #EB4D4D;
+    border-radius: 15px;
+    color: #fff;
+    width: 60%;
+    margin: 0 auto;
+    padding: 4px;
+    margin-top:10px;
+    text-align: center;
+    height:30px;
+}
+
+.animal-current-label {
+    font-size:20px;
+}
+:disabled {
+    background: rgba(0, 0, 0, 0.10);
+    color: rgba(0, 0, 0, 0.10);
+}
+:disabled:hover {
+        background: rgba(0, 0, 0, 0.10);
+        color: rgba(0, 0, 0, 0.10);
+    }
+.panel-animals img {
+    cursor:pointer;
+}
+.panel-animals, .panel-buttons {
+    text-align: center;
+    margin: 5px auto;
+    width: 100%;
+    padding: 20px;
+    border-radius:20px;
+}
+    .title-operations {
+        font-size: 15px;
+    }
+
+    .animal {
+      
+        height: 180px;
+        width: 180px;
+        margin: 2px;
+        padding: 5px;
+        border-radius: 15px;
+    }
+button {
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 10px;
+    cursor: pointer;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 100;
+    margin: 2px;
+}
+.active {
+    background-color: #EB4D4D;
+    border: none;
+    box-shadow: 0px 0px 0px;
+}
+.border-active {
+    border: 2px solid #EB4D4D !important;
+    box-shadow: 0px 0px 0px;
+}
+button:hover {
+    color: #EB4D4D;
+}
+button:focus {
+    outline: none;
+}
+
+#btn-next, #btn-previous {
+    border-radius: 50%;
+    border:none;
+}
