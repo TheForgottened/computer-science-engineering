@@ -1,6 +1,6 @@
 # Computer Science & Engineering
 
-This repository contains all the material I gathered during my degree in Computer Science & Engineering at [ISEC](https://www.isec.pt).
+This repository contains all the material I gathered during my degree in Computer Science & Engineering at [ISEC](https://www.isec.pt) from 2019 to 2022.
 
 Every course is separated into individual folders, using the same acronyms the university uses as the folder's name.
 
