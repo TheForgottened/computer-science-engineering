@@ -1,0 +1,113 @@
+\documentclass[11pt]{article}
+\usepackage{graphicx}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{tikz}
+\usepackage{indentfirst}
+\usepackage{tabularx}
+\usepackage{listingsutf8}
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage{float}
+\usepackage[portuguese]{babel}
+
+\graphicspath{{./images/}}
+
+\def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;} 
+\setlength{\parskip}{0.5em}
+
+\renewcommand{\lstlistingname}{Código}
+\renewcommand{\lstlistlistingname}{Pedaços de Código}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\hypersetup{
+	colorlinks=false,
+	linktoc=all,
+	hidelinks,
+}
+
+\lstset{
+	belowcaptionskip=1\baselineskip,
+	captionpos=b,
+	frame=tb,
+	language=Java,
+	aboveskip=3mm,
+	belowskip=3mm,
+	showstringspaces=false,
+	columns=flexible,
+	basicstyle={\small\ttfamily},
+	numbers=none,
+	numberstyle=\tiny\color{gray},
+	keywordstyle=\color{blue},
+	commentstyle=\color{dkgreen},
+	stringstyle=\color{mauve},
+	breaklines=true,
+	breakatwhitespace=true,
+	tabsize=3,
+	inputencoding=utf8,
+	extendedchars=true,
+	literate={á}{{\'a}}1 {ã}{{\~a}}1 {à}{{\`a} }1 {Ã}{{\~A}}1 {ó}{{\'o}}1 {Ó}{{\'O}}1 {Í}{{\'I}}1 {í}{{\'i}}1 {é}{{\'e}}1 {ç}{{\c{c}}}1 {Ç}{{\c{C}}}1 {ú}{{\'u}}1 {õ}{{\~o}}1
+}
+
+\begin{document}
+	\begin{titlepage}
+		\begin{center}
+			\includegraphics[width=0.6\textwidth]{logo-isec}
+			
+			\vspace*{\fill}
+			
+			\includegraphics[width=0.4\textwidth]{icon-metapd}
+			
+			\Huge
+			\textbf{MetaPD}
+			
+			\huge
+			Relatório Sumário - Meta 3
+			
+			\vspace{2cm}
+			
+			\Large
+			\textbf{
+				Ângelo Paiva, 2019129023 \\
+				Daniel Ribeiro, 2017013425 \\
+				Francisco Ferreira, 2015017086
+			}
+			
+			\vfill
+			\vspace*{\fill}
+			
+			\normalsize
+			Programação Distribuída \\
+			Licenciatura de Engenharia Informática, Ramo de Desenvolvimento de Aplicações \\
+			22 de janeiro de 2022		
+		\end{center}
+	\end{titlepage}
+
+	\tableofcontents
+	\pagebreak
+	
+	\large
+	\section{RESTAPI}
+	\normalsize
+	
+	A RESTAPI foi escrita em SpringBoot. Para todos os pedidos, menos para pedir token, é necessário autenticação (sendo que cada token expira passado 2 minutos).
+	
+	Nesta fazemos uso de \textbf{PUT}, \textbf{POST}, \textbf{GET} e \textbf{DELETE}.
+		
+	A especificação desta pode ser encontrada no ficheiro \textbf{rest-api-specification.pdf} que foi entregue junto deste relatório. Esta foi escrita em markdown e compilada para PDF usando \color{blue}\underline{\href{https://md2pdf.netlify.app/}{este website}}\color{black}.
+	
+	
+	\large
+	\section{Interfaces Remotas (Java RMI)}
+	\normalsize
+	
+	Foram desenvolvidas duas interfaces remotas, \textbf{RemoteLbObserverInterface} e \textbf{RemoteLbObservableInterface}. Esta última interface é a que fica associada ao load-balancer.
+	
+	O observer, ao iniciar, cria uma instância do objeto remoto, procura o observable (que, no caso, é o load-balancer) registado com o nome de serviço \textbf{GRDS\_Service} e, quando obtém uma referência para este, regista-se como observador.
+	
+	O observable, sempre que assim é pretendido, envia uma notificação aos observers a dizer que algo aconteceu. Por exemplo, no caso duma notificação de alteração da base de dados, os observers recebem uma notificação a dizer que houve uma alteração à base de dados em conjunto com uma lista dos utilizadores afetados.
+	
+	
+\end{document}
