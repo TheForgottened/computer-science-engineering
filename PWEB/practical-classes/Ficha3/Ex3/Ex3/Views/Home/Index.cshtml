@@ -1,0 +1,14 @@
+﻿@model UnidadeCurricular
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <ul>
+        <li>Nome: @Model?.Nome</li>
+        <li>ECTS: @Model?.ECTS</li>
+        <li>Curso: @Model?.Curso</li>
+        <li>Semestre: @Model?.Semestre</li>
+    </ul>
+</div>
