@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">rAsCuNhOs</string>
+    <string name="btn_fundo_solido">Fundo Sólido</string>
+    <string name="btn_imagem">Imagem</string>
+    <string name="btn_fotografia">Fotografia</string>
+    <string name="btn_historico">Histórico</string>
+    <string name="wip">Disponível brevemente</string>
+</resources>

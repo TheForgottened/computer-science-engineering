@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/_26sdp"
+    android:layout_height="@dimen/_26sdp"
+    android:background="@color/dracula_background"
+    android:gravity="center"
+    android:padding="2dp"
+    android:id="@+id/card_view_main_layout">
+
+    <LinearLayout
+        android:id="@+id/square_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/dracula_background_lighter">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_view_square"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_margin="1dp"
+            android:visibility="gone"
+            app:cardCornerRadius="50dp"
+            app:strokeColor="@color/dracula_background_darker"
+            app:cardForegroundColor="@color/dracula_cyan"
+            app:strokeWidth="2dp"/>
+    </LinearLayout>
+</LinearLayout>

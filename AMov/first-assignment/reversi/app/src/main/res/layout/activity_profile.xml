@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".ProfileActivity">
+
+    <ImageView
+        android:id="@+id/image_view_avatar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        app:layout_constraintDimensionRatio="1:1"
+        android:layout_marginBottom="20dp"
+        android:layout_gravity="center"/>
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/button_panel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:layout_margin="10dp">
+
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+            android:text="@string/new_avatar"
+            android:onClick="onClickNewAvatar" />
+
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+            android:text="@string/change_name"
+            android:onClick="onClickChangeName" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/view_scores"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/view_scores"
+            android:onClick="onClickViewScores" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.appcompat.widget.LinearLayoutCompat>

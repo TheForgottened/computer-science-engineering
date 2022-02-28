@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="TextNoSize">
+        <item name="android:fontFamily">@font/lobster</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+    <style name="TextAutoSize" parent="@style/TextNoSize">
+        <item name="autoSizeTextType">uniform</item>
+        <item name="autoSizeMinTextSize">12sp</item>
+        <item name="autoSizeMaxTextSize">32sp</item>
+    </style>
+</resources>

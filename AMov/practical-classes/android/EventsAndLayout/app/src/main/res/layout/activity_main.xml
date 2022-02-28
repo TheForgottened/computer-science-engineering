@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tvMsg"
+
+        android:background="@color/dracula_background"
+        android:textColor="@color/dracula_foreground"
+
+        android:textSize="20sp"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:fontFamily="@font/firacode_retina"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="@string/app_name" />
+
+    <TextView
+        android:id="@+id/tvMsgWorld"
+
+        android:background="@color/dracula_background"
+        android:textColor="@color/dracula_red"
+
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_weight="1"
+
+        android:fontFamily="@font/roboto_regular"
+
+        app:autoSizeMinTextSize="18sp"
+        app:autoSizeMaxTextSize="64sp"
+        app:autoSizeTextType="uniform"
+
+        android:gravity="center_vertical|center_horizontal"
+        android:text="Hello world! Small World! Big World! World!" />
+
+    <Button
+        android:id="@+id/buttonOne"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="bruh" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/dracula_green"
+        android:padding="8dp">
+
+        <Button
+            android:id="@+id/buttonTwo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="dood" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/dracula_red"
+        android:padding="8dp">
+
+        <Button
+            android:id="@+id/buttonThree"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="fam" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/dracula_orange"
+        android:padding="8dp">
+
+        <Button
+            android:id="@+id/buttonFour"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="idk" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/dracula_yellow"
+        android:padding="8dp">
+
+        <Button
+            android:id="@+id/buttonFive"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="idc" />
+    </LinearLayout>
+
+</LinearLayout>

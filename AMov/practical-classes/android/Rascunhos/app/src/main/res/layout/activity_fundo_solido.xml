@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:orientation="vertical"
+    tools:context=".FundoSolidoActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:textSize="20sp"
+        android:text="Título:" />
+
+    <EditText
+        android:id="@+id/edit_titulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:maxLines="1"
+
+        android:hint="Título fixe aqui..."
+
+        android:fontFamily="serif-monospace" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:layout_marginTop="20dp"
+        android:padding="10dp"
+
+        android:orientation="vertical"
+        android:background="@color/dracula_background_light">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:textSize="20sp"
+            android:background="#00000000"
+            android:text="Cor de fundo" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:padding="10dp"
+
+            android:background="#00000000"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:textColor="@color/dracula_red"
+                android:background="#00000000"
+                android:textSize="20sp"
+                android:text="R:" />
+
+            <SeekBar
+                android:id="@+id/seekbar_red"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:progress="50"
+
+                android:layout_gravity="center"
+
+                android:thumbTint="@color/dracula_red"
+                android:progressTint="@color/dracula_red"
+                android:background="#00000000" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:padding="10dp"
+
+            android:background="#00000000"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:textColor="@color/dracula_green"
+                android:background="#00000000"
+                android:textSize="20sp"
+                android:text="G:" />
+
+            <SeekBar
+                android:id="@+id/seekbar_green"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:progress="50"
+
+                android:layout_gravity="center"
+
+                android:thumbTint="@color/dracula_green"
+                android:progressTint="@color/dracula_green"
+                android:background="#00000000" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:padding="10dp"
+
+            android:background="#00000000"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:textColor="@color/dracula_cyan"
+                android:background="#00000000"
+                android:textSize="20sp"
+                android:text="B:" />
+
+            <SeekBar
+                android:id="@+id/seekbar_blue"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:progress="50"
+
+                android:layout_gravity="center"
+
+                android:thumbTint="@color/dracula_cyan"
+                android:progressTint="@color/dracula_cyan"
+                android:background="#00000000" />
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/color_square"
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+
+            android:background="#ffffff" />
+    </LinearLayout>
+</LinearLayout>

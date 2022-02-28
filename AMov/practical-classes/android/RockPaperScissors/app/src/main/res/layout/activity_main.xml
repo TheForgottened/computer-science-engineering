@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:padding="24dp"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/titleGuidelineBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.2" />
+
+    <TextView
+        style="@style/TextNoSize"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:autoSizeMaxTextSize="48sp"
+        app:autoSizeMinTextSize="20sp"
+        app:autoSizeTextType="uniform"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text="@string/rock_paper_scissors"
+        app:layout_constraintBottom_toBottomOf="@id/titleGuidelineBottom"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/actionsGuidelineButtonsLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.30" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/actionsGuidelineButtonsRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.70" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/actionsGuidelineMiddle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.45" />
+
+    <Button
+        style="@style/TextNoSize"
+        android:id="@+id/btnServer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:background="#f0e0d0"
+        android:padding="16dp"
+        android:text="@string/server_mode"
+        android:textAllCaps="false"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toTopOf="@id/actionsGuidelineMiddle"
+        app:layout_constraintEnd_toStartOf="@id/actionsGuidelineButtonsRight"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        style="@style/TextNoSize"
+        android:id="@+id/btnClient"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="#f0e0d0"
+        android:padding="16dp"
+        android:text="@string/client_mode"
+        android:textAllCaps="false"
+        android:textSize="32sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/actionsGuidelineButtonsLeft"
+        app:layout_constraintTop_toTopOf="@id/actionsGuidelineMiddle" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/picturesGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.70" />
+
+    <ImageView
+        android:contentDescription="@string/rock"
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imageView2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/picturesGuideline"
+        app:srcCompat="@drawable/rock" />
+
+    <ImageView
+        android:contentDescription="@string/paper"
+        android:id="@+id/imageView2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imageView3"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/picturesGuideline"
+        app:srcCompat="@drawable/paper" />
+
+    <ImageView
+        android:contentDescription="@string/scissors"
+        android:id="@+id/imageView3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        app:layout_constraintTop_toTopOf="@+id/picturesGuideline"
+        app:srcCompat="@drawable/scissors" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

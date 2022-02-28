@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/mnGravar"
+        android:icon="@android:drawable/ic_menu_save"
+        app:showAsAction="ifRoom"
+        android:title="@string/txt_gravar" />
+    <group android:checkableBehavior="single"
+        android:id="@+id/grpCores">
+        <item android:title="@string/txt_white"
+            android:id="@+id/mnWhite"
+            app:showAsAction="never"/>
+        <item android:title="@string/txt_yellow"
+            android:id="@+id/mnYellow"
+            app:showAsAction="never"/>
+        <item android:title="@string/txt_blue"
+            android:id="@+id/mnBlue"
+            app:showAsAction="never"/>
+        <item android:title="@string/txt_black"
+            android:id="@+id/mnBlack"
+            app:showAsAction="never"
+            android:checked="true"/>
+    </group>
+</menu>

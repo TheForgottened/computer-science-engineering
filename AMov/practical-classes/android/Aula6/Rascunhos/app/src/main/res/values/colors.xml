@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="cor_l1">#f7bd4a</color>
+    <color name="cor_d1">#563d38</color>
+    <color name="cor_n1">#c6b6b4</color>
+    <color name="cor_c1">#7f3e90</color>
+    <color name="cor_l2">#b9845d</color>
+    <color name="cor_t1">#e8d8cf</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+</resources>

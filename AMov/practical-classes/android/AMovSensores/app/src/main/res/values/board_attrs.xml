@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="Board">
+        <attr name="colorBall" format="color" />
+        <attr name="nrBalls" format="integer" />
+        <!-- can be defined other attributes -->
+    </declare-styleable>
+</resources>

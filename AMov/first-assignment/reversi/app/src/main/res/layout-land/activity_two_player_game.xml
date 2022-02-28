@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/player_one"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="20dp" >
+
+        <ImageView
+            android:id="@+id/image_view_avatar_one"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:padding="5dp"
+            android:background="@color/dracula_background_lighter"
+            android:src="@drawable/ic_person_black" />
+
+
+        <TextView
+            android:id="@+id/name_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:layout_gravity="center" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/board_recycler_view"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintDimensionRatio="1:1"
+        android:layout_margin="10dp"
+        android:layout_gravity="center">
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/player_two"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="20dp" >
+
+        <ImageView
+            android:id="@+id/image_view_avatar_two"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:padding="5dp"
+            android:background="@color/dracula_background_lighter"
+            android:src="@drawable/ic_person_black"
+            android:layout_gravity="center" />
+
+
+        <TextView
+            android:id="@+id/name_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp" />
+
+        <Button
+            android:id="@+id/skip_turn_button"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="@string/skip_turn"
+            android:layout_gravity="center" />
+
+        <RadioGroup
+            android:id="@+id/game_radio_button_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical" >
+
+            <RadioButton
+                android:id="@+id/normal_piece"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/normal_piece"
+                android:textColor="@color/dracula_foreground"
+                android:checked="true" />
+
+            <RadioButton
+                android:id="@+id/bomb_piece"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/bomb_piece"
+                android:textColor="@color/dracula_foreground" />
+
+            <RadioButton
+                android:id="@+id/swap_piece"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/swap_piece"
+                android:textColor="@color/dracula_foreground" />
+        </RadioGroup>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.appcompat.widget.LinearLayoutCompat>

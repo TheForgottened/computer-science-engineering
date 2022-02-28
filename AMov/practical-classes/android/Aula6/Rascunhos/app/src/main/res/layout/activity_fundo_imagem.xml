@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.FundoImagemActivity"
+    android:orientation="vertical"
+    android:background="@color/cor_l1"
+    android:padding="8dp">
+    <TextView
+        android:textSize="20sp"
+        android:textColor="@color/cor_c1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ask_titulo" />
+    <EditText
+        android:id="@+id/edTitulo"
+        android:maxLines="1"
+        android:maxLength="25"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_titulo"
+        android:fontFamily="monospace"/>
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/cor_n1" >
+        <TextView
+            android:textSize="20sp"
+            android:textColor="@color/cor_c1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ask_imagem_de_fundo" />
+       <Button
+           android:id="@+id/btn_imagem"
+           android:layout_marginTop="16dp"
+           android:layout_marginHorizontal="16dp"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:text="@string/btn_nova_fotografia" />
+        <FrameLayout
+            android:id="@+id/frPreview"
+            android:layout_margin="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/cor_c1" />
+    </LinearLayout>
+</LinearLayout>

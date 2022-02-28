@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:orientation="vertical"
+    tools:context=".FundoImagemActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:textSize="20sp"
+        android:text="Título:" />
+
+    <EditText
+        android:id="@+id/edit_titulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:maxLines="1"
+
+        android:hint="Título fixe aqui..."
+
+        android:fontFamily="serif-monospace" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:layout_marginTop="20dp"
+        android:padding="10dp"
+
+        android:orientation="vertical"
+        android:background="@color/dracula_background_light">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:textSize="20sp"
+            android:background="#00000000"
+            android:text="Imagem de fundo" />
+
+        <Button
+            android:layout_marginHorizontal="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Escolher imagem"
+            android:textSize="20sp"
+            android:id="@+id/button_imagem" />
+
+        <FrameLayout
+            android:id="@+id/color_square"
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+
+            android:background="#ffffff" />
+    </LinearLayout>
+</LinearLayout>

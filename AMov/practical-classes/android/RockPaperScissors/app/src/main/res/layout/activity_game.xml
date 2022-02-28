@@ -1,0 +1,106 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GameActivity"
+    android:background="#ffffff"
+    android:padding="16dp">
+
+    <TextView
+        style="@style/TextNoSize"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text="@string/rock_paper_scissors"
+        app:autoSizeMaxTextSize="48sp"
+        app:autoSizeMinTextSize="20sp"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toTopOf="@id/tvInfo"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/tvInfo"
+        style="@style/TextNoSize"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/picturesGuideline1"
+        android:text="@string/ask_move"
+        android:textSize="32sp"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/picturesGuideline1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.30" />
+
+    <ImageView
+        android:contentDescription="@string/rock"
+        android:id="@+id/imageRock"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toStartOf="@+id/imagePaper"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/picturesGuideline2"
+        app:layout_constraintTop_toTopOf="@id/picturesGuideline1"
+        app:srcCompat="@drawable/rock"/>
+
+    <ImageView
+        android:contentDescription="@string/paper"
+        android:id="@+id/imagePaper"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toStartOf="@+id/imageScissors"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imageRock"
+        app:layout_constraintTop_toTopOf="@id/picturesGuideline1"
+        app:layout_constraintBottom_toTopOf="@id/picturesGuideline2"
+        app:srcCompat="@drawable/paper"/>
+
+    <ImageView
+        android:contentDescription="@string/scissors"
+        android:id="@+id/imageScissors"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imagePaper"
+        app:layout_constraintTop_toTopOf="@id/picturesGuideline1"
+        app:layout_constraintBottom_toTopOf="@id/picturesGuideline2"
+        app:srcCompat="@drawable/scissors"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/picturesGuideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.65" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/scoresGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.70" />
+    <fragment
+        android:id="@+id/fragmentScores"
+        android:name="pt.isec.ans.rockpaperscissors.ScoresFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="@id/scoresGuideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout="@layout/fragment_scores"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

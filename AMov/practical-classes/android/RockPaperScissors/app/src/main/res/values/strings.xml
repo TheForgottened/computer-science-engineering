@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Rock-Paper-Scissors</string>
+    <string name="rock_paper_scissors">Rock-Paper-Scissors</string>
+    <string name="error_address">Address not recognized</string>
+    <string name="button_connect">Connect</string>
+    <string name="ask_ip">Server IP address:</string>
+    <string name="client_mode">Client mode</string>
+    <string name="server_mode">Server mode</string>
+    <string name="button_cancel">Cancel</string>
+    <string name="my_wins">My wins:</string>
+    <string name="other_wins">Other wins:</string>
+    <string name="total_games">Total games:</string>
+    <string name="ask_move">Choose your move:</string>
+    <string name="rock">Rock</string>
+    <string name="paper">Paper</string>
+    <string name="scissors">Scissors</string>
+    <string name="msg_ip_address">Server IP address: %s\nWaiting for a client...</string>
+    <string name="btn_emulator">Connect to emulator</string>
+</resources>

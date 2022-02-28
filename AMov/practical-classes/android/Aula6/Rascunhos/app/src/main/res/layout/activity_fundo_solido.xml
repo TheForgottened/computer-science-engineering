@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.FundoSolidoActivity"
+    android:orientation="vertical"
+    android:background="@color/cor_l1"
+    android:padding="8dp">
+    <TextView
+        android:textSize="20sp"
+        android:textColor="@color/cor_c1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ask_titulo" />
+    <EditText
+        android:id="@+id/edTitulo"
+        android:maxLines="1"
+        android:maxEms="30"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_titulo"
+        android:fontFamily="monospace"/>
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/cor_n1" >
+        <TextView
+            android:textSize="20sp"
+            android:textColor="@color/cor_c1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ask_cor_de_fundo" />
+        <LinearLayout
+            android:padding="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:textSize="20sp"
+                android:textColor="#FF0000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ask_red" />
+            <SeekBar
+                android:progress="75"
+                android:id="@+id/seekRed"
+                android:thumbTint="#ff0000"
+                android:progressTint="#ff0000"
+                android:layout_marginStart="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
+        </LinearLayout>
+        <LinearLayout
+            android:padding="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:textSize="20sp"
+                android:textColor="#008000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ask_green" />
+            <SeekBar
+                android:progress="25"
+                android:id="@+id/seekGreen"
+                android:thumbTint="#008000"
+                android:progressTint="#008000"
+                android:layout_marginStart="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
+        </LinearLayout>
+        <LinearLayout
+            android:padding="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:textSize="20sp"
+                android:textColor="#0000ff"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ask_blue" />
+            <SeekBar
+                android:progress="50"
+                android:id="@+id/seekBlue"
+                android:thumbTint="#0000ff"
+                android:progressTint="#0000ff"
+                android:layout_marginStart="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
+        </LinearLayout>
+        <FrameLayout
+            android:id="@+id/frPreview"
+            android:layout_margin="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/cor_c1" />
+    </LinearLayout>
+</LinearLayout>

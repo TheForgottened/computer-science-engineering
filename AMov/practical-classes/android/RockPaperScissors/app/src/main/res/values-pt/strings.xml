@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Pedra-Papel-Tesoura</string>
+    <string name="rock_paper_scissors">Pedra-Papel-Tesoura</string>
+    <string name="error_address">Endereço não reconhecido</string>
+    <string name="button_connect">Ligar</string>
+    <string name="ask_ip">IP do servidor:</string>
+    <string name="client_mode">Modo Cliente</string>
+    <string name="server_mode">Modo Servidor</string>
+    <string name="button_cancel">Cancelar</string>
+    <string name="my_wins">Minhas vitórias:</string>
+    <string name="other_wins">Vitórias do adversário:</string>
+    <string name="total_games">Total de jogos:</string>
+    <string name="ask_move">Escolhe a jogada:</string>
+    <string name="rock">Pedra</string>
+    <string name="paper">Papel</string>
+    <string name="scissors">Tesoura</string>
+    <string name="msg_ip_address">IP do servidor: %s\nÀ espera de um cliente...</string>
+    <string name="btn_emulator">Ligar a um emulador</string>
+</resources>

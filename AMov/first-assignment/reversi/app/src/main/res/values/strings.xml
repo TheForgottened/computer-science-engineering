@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" translatable="false">Reversi</string>
+    <string name="stylized_app_name" translatable="false">&lt;Reversi&gt;</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="settings">Settings</string>
+    <string name="two_player_local">Two Players (Local)</string>
+    <string name="two_player_network">Two Players (Network)</string>
+    <string name="three_player_network">Three Players (Network)</string>
+    <string name="wip">Work in progress!</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="default_local_user_name">Player</string>
+    <string name="not_register">Already have an account? <u>Sign in</u></string>
+    <string name="prompt_password">Password</string>
+    <string name="name">Username</string>
+    <string name="prompt_email">Email</string>
+    <string name="create_account">Create Account</string>
+    <string name="register_instead">Don\'t have an account? <u>Register here</u></string>
+    <string name="piece_description">Piece</string>
+    <string name="ask_permissions">Please give the app the following permissions.</string>
+    <string name="photo_capture_success">Photo captured successfully!</string>
+    <string name="photo_capture_fail">Unable to capture photo!</string>
+    <string name="new_avatar">New Avatar</string>
+    <string name="change_name">Change Name</string>
+    <string name="change_name_description">Write your new name</string>
+    <string name="ok" translatable="false">Ok</string>
+    <string name="cancel">Cancel</string>
+    <string name="change_name_error">Invalid name</string>
+    <string name="profile">Profile</string>
+    <string name="anonymous">Anonymous</string>
+    <string name="end_game">End Game</string>
+    <string name="end_game_message">%s wins with %d points.</string>
+    <string name="skip_turn">Skip</string>
+    <string name="normal_piece">Normal</string>
+    <string name="bomb_piece">Bomb</string>
+    <string name="swap_piece">Swap</string>
+    <string name="piece_unavailable">That piece is not available.</string>
+    <string name="client_server_question">Client or Server?</string>
+    <string name="server">Server</string>
+    <string name="client">Client</string>
+    <string name="ip_address_message">Server IP address: %s Waiting for clients...</string>
+    <string name="ask_server_ip">Server IP</string>
+    <string name="connect">Connect</string>
+    <string name="error_address">Invalid IP address</string>
+    <string name="view_scores">View Top 5 Scores</string>
+</resources>

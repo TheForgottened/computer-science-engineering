@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_gravar"
+        android:title="Gravar"
+        android:icon="@android:drawable/ic_menu_save"
+        app:showAsAction="always" />
+
+    <group
+        android:id="@+id/grupo_cores"
+        android:checkableBehavior="single" >
+        <item android:id="@+id/mnWhite"
+            android:title="White"
+            app:showAsAction="never" />
+
+        <item android:id="@+id/mnYellow"
+            android:title="Yellow"
+            app:showAsAction="never" />
+
+        <item android:id="@+id/mnBlue"
+            android:title="Blue"
+            app:showAsAction="never" />
+
+        <item android:id="@+id/mnBlack"
+            android:title="Black"
+            android:checked="true"
+            app:showAsAction="never" />
+
+    </group>
+</menu>

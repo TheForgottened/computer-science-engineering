@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Rascunhos@Android</string>
+    <string name="rascunho">Rascunhos</string>
+    <string name="btn_fundo_solido">Fundo Sólido</string>
+    <string name="btn_imagem_galeria">Imagem da Galeria</string>
+    <string name="btn_fotografia">Fotografia</string>
+    <string name="btn_historico">Histórico</string>
+    <string name="ask_titulo">Título:</string>
+    <string name="hint_titulo">Indique o título</string>
+    <string name="ask_cor_de_fundo">Cor de fundo:</string>
+    <string name="ask_red">R:</string>
+    <string name="ask_green">G:</string>
+    <string name="ask_blue">B:</string>
+    <string name="msg_brevemente">Disponível brevemente</string>
+    <string name="msg_titulo_vazio">Tem de indicar um título</string>
+    <string name="str_no_name">Sem nome</string>
+    <string name="txt_gravar">Gravar</string>
+    <string name="txt_criar">Criar</string>
+    <string name="txt_white">White</string>
+    <string name="txt_yellow">Yellow</string>
+    <string name="txt_blue">Blue</string>
+    <string name="txt_black">Black</string>
+    <string name="ask_imagem_de_fundo">Imagem de fundo:</string>
+    <string name="btn_escolher_imagem">Escolher imagem</string>
+    <string name="btn_nova_fotografia">Nova fotografia</string>
+    <string name="msg_no_image">Não existe imagem definida</string>
+</resources>

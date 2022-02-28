@@ -1,0 +1,211 @@
+\documentclass[11pt]{article}
+\usepackage{graphicx}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{tikz}
+\usepackage{indentfirst}
+\usepackage{tabularx}
+\usepackage{listingsutf8}
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage{float}
+\usepackage[portuguese]{babel}
+
+\graphicspath{{./images/}}
+
+\def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;} 
+\setlength{\parskip}{0.5em}
+
+\renewcommand{\lstlistingname}{Código}
+\renewcommand{\lstlistlistingname}{Pedaços de Código}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\hypersetup{
+	colorlinks=false,
+	linktoc=all,
+	hidelinks,
+}
+
+\lstdefinelanguage{Kotlin}{
+	comment=[l]{//},
+	commentstyle={\color{gray}\ttfamily},
+	emph={filter, first, firstOrNull, forEach, lazy, map, mapNotNull, println},
+	emphstyle={\color{OrangeRed}},
+	identifierstyle=\color{black},
+	keywords={!in, !is, abstract, actual, annotation, as, as?, break, by, catch, class, companion, const, constructor, continue, crossinline, data, delegate, do, dynamic, else, enum, expect, external, false, field, file, final, finally, for, fun, get, if, import, in, infix, init, inline, inner, interface, internal, is, lateinit, noinline, null, object, open, operator, out, override, package, param, private, property, protected, public, receiveris, reified, return, return@, sealed, set, setparam, super, suspend, tailrec, this, throw, true, try, typealias, typeof, val, var, vararg, when, where, while},
+	keywordstyle={\color{NavyBlue}\bfseries},
+	morecomment=[s]{/*}{*/},
+	morestring=[b]",
+	morestring=[s]{"""*}{*"""},
+	ndkeywords={@Deprecated, @JvmField, @JvmName, @JvmOverloads, @JvmStatic, @JvmSynthetic, Array, Byte, Double, Float, Int, Integer, Iterable, Long, Runnable, Short, String, Any, Unit, Nothing},
+	ndkeywordstyle={\color{BurntOrange}\bfseries},
+	sensitive=true,
+	stringstyle={\color{ForestGreen}\ttfamily},
+}
+
+\lstset{
+	belowcaptionskip=1\baselineskip,
+	captionpos=b,
+	frame=tb,
+	language=Kotlin,
+	aboveskip=3mm,
+	belowskip=3mm,
+	showstringspaces=false,
+	columns=flexible,
+	basicstyle={\small\ttfamily},
+	numbers=none,
+	numberstyle=\tiny\color{gray},
+	keywordstyle=\color{blue},
+	commentstyle=\color{dkgreen},
+	stringstyle=\color{mauve},
+	breaklines=true,
+	breakatwhitespace=true,
+	tabsize=3,
+	inputencoding=utf8,
+	extendedchars=true,
+	literate={á}{{\'a}}1 {ã}{{\~a}}1 {à}{{\`a} }1 {Ã}{{\~A}}1 {ó}{{\'o}}1 {Ó}{{\'O}}1 {Í}{{\'I}}1 {í}{{\'i}}1 {é}{{\'e}}1 {ç}{{\c{c}}}1 {Ç}{{\c{C}}}1 {ú}{{\'u}}1 {õ}{{\~o}}1
+}
+
+\begin{document}
+	\begin{titlepage}
+		\begin{center}
+			\includegraphics[width=0.6\textwidth]{logo-isec}
+			
+			\vspace*{\fill}
+			
+			\includegraphics[width=0.4\textwidth]{icon-reversi}
+			
+			\Huge
+			\textbf{Reversi}
+			
+			\huge
+			Relatório Técnico
+			
+			\vspace{2cm}
+			
+			\Large
+			\textbf{
+				Ângelo Paiva, 2019129023 \\
+				Jan Frank, 2017009793 \\
+				Pedro Henriques, 2019129770
+			}
+			
+			\vfill
+			\vspace*{\fill}
+			
+			\normalsize
+			Arquiteturas Móveis \\
+			Licenciatura de Engenharia Informática, Ramo de Desenvolvimento de Aplicações \\
+			1 de janeiro de 2022		
+		\end{center}
+	\end{titlepage}
+
+	\tableofcontents
+	\pagebreak
+	
+	\large
+	\section{Introdução}
+	\normalsize
+	
+	Neste trabalho foi implementada uma versão do clássico jogo reversi para Android. Esta aplicação foi escrita em Kotlin com recurso ao Android Studio.
+	
+	Este relatório irá servir para explicar a implementação e a razão por trás das decisões que foram tomadas.
+	
+	
+	\large
+	\section{Manual de Utilizador}
+	\normalsize
+	
+	Este relatório técnico é também acompanhado por um manual de utilizador. Como manda a tradição, este foi escrito em \textbf{markdown}, tendo sido usada uma ferramenta online para converter \textbf{markdown} num \textbf{ficheiro PDF} que copia o aspeto que estes costumam ter no \textbf{GitHub}.
+	
+	Neste manual de utilizador estão descritas as regras de jogo, os diferentes modos que se podem jogar e como se pode editar o perfil pessoal!
+	
+	
+	\large
+	\section{Guardar Dados Localmente}
+	\normalsize
+	
+	Todos os dados desta aplicação são guardados no diretório privado da mesma. 
+	
+	Para além da imagem, todas as outras informações são guardadas num ficheiro JSON, achamos que não faz sentido guardar informação em ficheiros binários ou de difícil acesso.
+	
+	
+	\large
+	\section{Captura de Imagem para Avatar}
+	\normalsize
+	
+	Era pedido que houvesse a opção de o jogador ter uma imagem associada, mas a única maneira de associar uma imagem seria capturá-la na hora. Ao nível da aplicação, esta captura teria que ser realizada pela própria aplicação, não podendo recorrer a aplicações terceiras.
+	
+	Assim, respeitando a recomendação feita na documentação oficial, foi usada a biblioteca \textbf{CameraX} para a captura da imagem.
+	
+	Capturamos uma imagem com rácio 1:1 e resolução 1000x1000, o rácio achamos que um avatar deveria ser quadrado e a resolução achamos que chega e sobra para um simples avatar.
+	
+	Esta imagem, como referido anteriormente, é guardada no diretório privado da aplicação.
+	
+	
+	\large
+	\section{Comunicação Servidores - Clientes}
+	\normalsize
+	
+	Toda a comunicação feita entre dispositivos é feita com recurso a ficheiros JSON. Para garantir que a informação é sempre mandada corretamente e que, em caso de necessidade, se possam refatorizar propriedades, foi criado o \textbf{object JSONHelper} e, dentro deste, o \textbf{object JSONFields}.
+	
+	O primeiro contém todos os possíveis valores que as respetivas propriedades podem ter. O segundo contém o nome das propriedades.
+	
+	\begin{lstlisting}[caption=object JSONHelper]
+		object JSONHelper {
+			// Type of JSON
+			const val PLAYER_INFO = "PLAYER_INFO"
+			const val GAME_INFO = "GAME_INFO"
+			const val MOVE = "MOVE"
+			
+			// Types of Piece
+			const val NORMAL_PIECE = "normalPiece"
+			const val BOMB_PIECE = "bombPiece"
+			const val SWAP_PIECE = "swapPiece"
+			const val SKIP_PIECE = "skip"
+			
+			// State of Game
+			const val GAME_STATE_PLAYING = "gameStatePlaying"
+			const val GAME_STATE_FINISHED = "gameStateFinished"
+			
+			object JSONFields {
+				const val TYPE_NAME = "type" // String
+				
+				const val GAME_STATE_NAME = "gameState" // String
+				
+				const val PLAYER_NAME_NAME = "playerName" // String
+				const val AVATAR_NAME = "avatar" // Bitmap Encoded to String
+				const val SCORE_NAME = "score" // Int
+				
+				const val TYPE_PIECE_NAME = "typePiece" // String
+				const val POSITION_NAME = "position" // Int
+				const val SWAP_POSITIONS_ARRAY_NAME = "swapPositionsArray" // Array of Int
+				
+				const val PLAYERS_ARRAY_NAME = "playersArray" // Array of Player
+				const val CURRENT_PLAYER_NAME = "currentPlayer" // Int (position in playersArray)
+				const val BOARD_NAME = "board" // Array of Int
+			}
+		}
+	\end{lstlisting}
+
+	Para o envio dos avatares transformou-se o \textit{bitmap} numa string \textbf{codificada em Base64}, tirando partido do \textbf{Base64.URL\_SAFE} para poder enviar pelo \textbf{JSON} sem qualquer tipo de problemas e incompatibilidades.
+	
+	Durante o desenvolvimento também notámos que as classes \textbf{JSON} que vêm por defeito no \textbf{Kotlin} têm algumas interações peculiares. Por exemplo, se tentarmos inserir um \textbf{JSONObject} num \textbf{JSONArray}, e for chamado o \textbf{.toString()} desse objeto, na verdade será introduzida uma string cheia de \textit{escape characters}, impossibilitando depois o uso e manipulação do mesmo.
+	
+
+	\large
+	\section{Conclusão}
+	\normalsize
+	
+	Para além de ter sido um verdadeiro desafio, este trabalho foi uma excelente oportunidade para conhecer melhor \textbf{Kotlin} e todas as vantagens e \textit{syntactic-sugar} que nos proporciona.
+	
+
+	\large
+	\section{Anexos}
+	\normalsize
+	
+	\listoffigures
+	\lstlistoflistings
+\end{document}

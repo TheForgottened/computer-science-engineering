@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:background="@color/dracula_red"
+
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+
+        android:layout_gravity="center_horizontal"
+
+        android:layout_margin="16dp"
+        android:padding="32dp"
+
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:text="@string/app_name" />
+
+    <LinearLayout
+        android:orientation="vertical"
+
+        android:layout_gravity="bottom"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_margin="15dp"
+
+        android:background="#00000000">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:padding="16dp"
+            android:layout_margin="8dp"
+
+            android:textSize="24sp"
+            android:text="@string/btn_fundo_solido"
+
+            android:onClick="onFundoSolido" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:padding="16dp"
+            android:layout_margin="8dp"
+
+            android:textSize="24sp"
+            android:text="@string/btn_imagem"
+
+            android:onClick="onImagem" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:padding="16dp"
+            android:layout_margin="8dp"
+
+            android:textSize="24sp"
+            android:text="@string/btn_fotografia"
+
+            android:onClick="onFotografia" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:padding="16dp"
+            android:layout_margin="8dp"
+
+            android:textSize="24sp"
+            android:text="@string/btn_historico"
+
+            android:onClick="onHistorico" />
+    </LinearLayout>
+</FrameLayout>

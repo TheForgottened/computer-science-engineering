@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">AMovA7GPS</string>
+    <string name="lbl_longitude">Longitude</string>
+    <string name="lbl_latitude">Latitude</string>
+</resources>

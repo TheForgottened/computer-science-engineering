@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello_world">Olá mundo!</string>
+    <string name="two_player_local">Dois Jogares (Local)</string>
+    <string name="settings">Definições</string>
+    <string name="two_player_network">Dois Jogadores (Rede)</string>
+    <string name="three_player_network">Três Jogadores (Rede)</string>
+    <string name="wip">Em construção!</string>
+    <string name="default_local_user_name">Jogador</string>
+    <string name="login">Login</string>
+    <string name="register">Criar Conta</string>
+    <string name="not_register">Já tem conta? <u>Faça login</u></string>
+    <string name="prompt_password">Password</string>
+    <string name="name">Nome de Utilizador</string>
+    <string name="prompt_email">Email</string>
+    <string name="create_account">Criar Conta</string>
+    <string name="register_instead">Não tem conta? <u>Registe-se aqui</u></string>
+    <string name="piece_description">Peça</string>
+    <string name="ask_permissions">Por favor forneça à aplicação as seguintes permissões.</string>
+    <string name="photo_capture_success">Foto tirada com sucesso!</string>
+    <string name="photo_capture_fail">Erro ao tirar foto!</string>
+    <string name="new_avatar">Novo Avatar</string>
+    <string name="change_name">Mudar Nome</string>
+    <string name="change_name_description">Escreva o seu novo nome</string>
+    <string name="cancel">Cancelar</string>
+    <string name="change_name_error">Nome inválido</string>
+    <string name="profile">Perfil</string>
+    <string name="anonymous">Anónimo</string>
+    <string name="end_game">Fim de Jogo</string>
+    <string name="end_game_message">%s venceu com %d pontos.</string>
+    <string name="skip_turn">Passar</string>
+    <string name="normal_piece">Normal</string>
+    <string name="bomb_piece">Bomba</string>
+    <string name="swap_piece">Troca</string>
+    <string name="piece_unavailable">Essa peça não está disponível.</string>
+    <string name="client_server_question">Cliente ou servidor?</string>
+    <string name="server">Servidor</string>
+    <string name="client">Cliente</string>
+    <string name="ip_address_message">Endereço IP do servidor: %s À espera de clientes...</string>
+    <string name="ask_server_ip">IP do Servidor</string>
+    <string name="connect">Conectar</string>
+    <string name="error_address">Endereço IP inválido</string>
+    <string name="view_scores">Ver Pontuação Top 5</string>
+</resources>
