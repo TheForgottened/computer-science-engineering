@@ -2,4 +2,4 @@
 
 Here you can find all the documentation.
 
-The source coude can be found in [this repository](https://github.com/TheForgottened/flashee).
+The source code can be found in [this repository](https://github.com/TheForgottened/flashee).
