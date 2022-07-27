@@ -10,7 +10,7 @@ If you somehow ended up here out of nowhere, I recommend you check out this [rep
 
 The assignments are (mostly) done in portuguese.
 
-Degree Grade (so far): 15 out of 20 (GPA 3.75)
+Final Grade: 16 out of 20 (GPA 3.25)
 
 ---
 
