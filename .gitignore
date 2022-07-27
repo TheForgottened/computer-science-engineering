@@ -15,3 +15,6 @@
 *.ko
 *.obj
 *.elf
+
+# VS Code config. folder
+.vscode
