@@ -1,6 +1,6 @@
 # Investigação Operacional
 
-Also known as Operational Research.
+Also known as Operations Research.
 
 It's a mathematics' based course, so I only have the assignments here.
 

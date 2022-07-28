@@ -1,6 +1,6 @@
 # Análise Matemática 2
 
-Also known as Mathematical Analysis 2.
+Also known as Calculus 2.
 
 This course is done almost entirely in MatLab. As of writting this, ISEC offers a student license for the software (Arménio's fight finally paid off, congrats to him), so be sure to make use of it.
 

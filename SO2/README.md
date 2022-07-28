@@ -1,6 +1,6 @@
 # Sistemas Operativos 2
 
-Also known as Operating Systems 2.
+Also known as Operative Systems 2.
 
 Don't worry, it's easier than it seems. In the beginning it's weird but you'll get used to it. I hope you come to like TCHAR!
 

@@ -1,6 +1,6 @@
 # Sistemas Operativos 1
 
-Also known as Operating Systems 1.
+Also known as Operative Systems 1.
 
 If you're a Windows user, my recommendation is that you use WSL 2 instead of a VM. For everything to work as intended you need to configure the distro of your choice to mount the disk use the metadata protocol, which can be easily done with [this gist of mine](https://gist.github.com/TheForgottened/0a704c20b0a62866308fa3d4039847a9). By the way, do yourself a favor and get [Windows Terminal](https://www.microsoft.com/en-us/p/windows-terminal/9n0dx20hk701?activetab=pivot:overviewtab).
 

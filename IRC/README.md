@@ -1,6 +1,6 @@
 # Introdução às Redes de Comunicação
 
-Also known as Introduction to Communication Networks.
+Also known as Introduction to Data Networks.
 
 If you wanna compile with GCC (using MingW, since all of the code requires Winsock), you can use the following command:
 
